@@ -11,8 +11,10 @@ import './config/sequelize'
 
 const app = new Koa();
 const Router = new router()
+// 解析请求的body
 app.use(bodyParser())
 app.use(json())
+// ejs配置
 render(app, {
     root: path.join(__dirname, '../dist/views'),
     layout: false,
@@ -23,7 +25,9 @@ render(app, {
 
 Router.use('',  home.routes(), home.allowedMethods())
 Router.use('',  test.routes(), test.allowedMethods())
+
 app.use(Router.routes()).use(Router.allowedMethods())
+// 静态资源目录
 app.use(koatStatic(path.resolve(__dirname, '../dist/')))
 
 

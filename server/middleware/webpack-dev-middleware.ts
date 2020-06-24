@@ -2,7 +2,7 @@ import Koa from 'koa'
 import WebpackDevMiddleware from 'webpack-dev-middleware'
 import webpack from 'webpack'
 import { NextHandleFunction } from 'connect'
-
+// 封装webpack-dev-middleware 为koa中间件
 const devMiddleware = (compiler: webpack.ICompiler, opts: WebpackDevMiddleware.Options) => {
   let Options = {
     writeToDisk: true,

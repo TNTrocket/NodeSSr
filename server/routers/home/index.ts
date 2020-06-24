@@ -6,6 +6,8 @@ let list = await homeCtrl.getHomeName()
 
  return await ctx.render('home', {page: 'home', list})
 })
+
+
 Router.post('/tnt/getAge', async (ctx)=>{
     let {name} = ctx.request.body
     let data = await homeCtrl.getAge(name)
