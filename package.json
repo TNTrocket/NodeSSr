@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development rm -rf ./dist && tsnd --respawn ./bin/dev.server.ts",
-    "build": "NODE_ENV=production rm -rf ./dist && tsnd --respawn ./bin/server.ts"
+    "dev": "rm -rf ./dist && NODE_ENV=development tsnd --respawn ./bin/dev.server.ts",
+    "build": "rm -rf ./dist && NODE_ENV=production  tsnd --respawn ./bin/server.ts"
   },
   "author": "tnt",
   "license": "ISC",
