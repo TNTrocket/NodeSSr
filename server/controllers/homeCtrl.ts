@@ -9,7 +9,13 @@ class homeCtrl {
             features: item.features
         })
     })
-    return userList
+     return userList
+    }
+    
+    async getAge(name:string){
+        let data = await User.findOne({where: {name}})
+        let age = data?.age || ''
+        return {age}
     }
 
 }

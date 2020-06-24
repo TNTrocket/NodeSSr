@@ -7,7 +7,9 @@ class home extends basic{
     }
     init(){
         console.log('at home')
-        axios.post('/tnt/getAge',{name: '666'})
+        axios.post('/tnt/getAge',{name: '666'}).then((obj: any)=>{
+            console.log('age=======', obj.data.age)
+        })
         axios.get('/tnt/getAge?name=111')
     }
 }

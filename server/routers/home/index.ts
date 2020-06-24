@@ -8,8 +8,9 @@ let list = await homeCtrl.getHomeName()
 })
 Router.post('/tnt/getAge', async (ctx)=>{
     let {name} = ctx.request.body
+    let data = await homeCtrl.getAge(name)
     console.log('ctx.req=====', ctx.request.body)
-    return ctx.response.body = {name}
+    return ctx.response.body = {age: data.age}
 })
 Router.get('/tnt/getAge', async (ctx)=>{
     let {name} = ctx.request.query
