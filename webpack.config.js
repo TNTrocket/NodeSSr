@@ -105,7 +105,8 @@ const config = {
         commons: {
           name: 'app',
           chunks: 'all',
-          minChunks: 2
+          minChunks: 2,
+          test: /node_modules/
         }
       }
     }
